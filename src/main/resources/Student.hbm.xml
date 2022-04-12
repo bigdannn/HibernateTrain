@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Object.Student" table="Students">
+        <meta attribute="class-description">
+            This class contains details about students.
+        </meta>
+        <id name="student_code" type="string" column="student_code">
+            <generator class="native"/>
+        </id>
+        <property name="full_name" column="full_name" type="string"/>
+        <property name="group_number" column="group_number" type="java.lang.Integer"/>
+        <property name="year_of_admission" column="year_of_admission" type="string"/>
+    </class>
+</hibernate-mapping>
