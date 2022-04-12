@@ -9,10 +9,10 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
 public class StudentRunner {
-    private static SessionFactory sessionFactory;
+    private static Session session = HibernateUtil.getSessionFactory().openSession();
 
     public static void main(String[] args) {
-       sessionFactory = new Configuration().configure().buildSessionFactory();
+       session = HibernateUtil.getSessionFactory().openSession();
 
        StudentRunner studentRunner = new StudentRunner();
 
@@ -20,7 +20,7 @@ public class StudentRunner {
 
     }
     public void addStudent(Integer sc, String fn, Integer gn, String yoa){
-        Session session = sessionFactory.openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();;
         Transaction transaction = null;
 
         transaction = session.beginTransaction();
@@ -31,14 +31,13 @@ public class StudentRunner {
     }
 
     public List listStudents() {
-        Session session = this.sessionFactory.openSession();
         Transaction transaction = null;
 
         transaction = session.beginTransaction();
-        List developers = session.createQuery("FROM Students").list();
+        List from_students = session.createQuery("FROM Students").list();
 
         transaction.commit();
         session.close();
-        return developers;
+        return from_students;
     }
 }
