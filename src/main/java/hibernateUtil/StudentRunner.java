@@ -1,6 +1,6 @@
-package HibernateUtil;
+package hibernateUtil;
 
-import Object.Student;
+import object.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

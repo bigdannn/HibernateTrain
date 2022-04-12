@@ -1,7 +1,4 @@
-package HibernateUtil;
-
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+package hibernateUtil;
 
 public class Polygon {
 

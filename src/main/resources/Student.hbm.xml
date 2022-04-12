@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="Object.Student" table="Students">
+    <class name="object.Student" table="Students">
         <meta attribute="class-description">
             This class contains details about students.
         </meta>
