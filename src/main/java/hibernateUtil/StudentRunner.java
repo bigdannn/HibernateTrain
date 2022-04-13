@@ -31,10 +31,8 @@ public class StudentRunner {
     }
 
     public List listStudents() {
-        Transaction transaction = null;
-
-        transaction = session.beginTransaction();
-        List from_students = session.createQuery("FROM Students").list();
+        Transaction transaction = session.beginTransaction();
+        List<Student> from_students = session.createQuery("FROM Student").list();
 
         transaction.commit();
         session.close();
