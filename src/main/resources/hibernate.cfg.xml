@@ -24,7 +24,7 @@
         <property name="connection.pool_size">100</property>
         <property name="current_session_context_class">thread</property>
 
-        <mapping class="object.Students" />
+        <mapping class="entity.Students" />
 
     </session-factory>
 </hibernate-configuration>

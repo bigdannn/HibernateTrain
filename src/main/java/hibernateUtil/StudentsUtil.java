@@ -1,27 +1,20 @@
 package hibernateUtil;
 
-import object.Students;
+import entity.Students;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentRunner {
+public class StudentsUtil implements DataBaseOperations{
     private static Session session = HibernateUtil.getSessionFactory().openSession();
 
-    public static void main(String[] args) {
-        session = HibernateUtil.getSessionFactory().openSession();
-
-        StudentRunner studentRunner = new StudentRunner();
-
-    }
-
-    public void addStudent(Integer sc, String fn, Integer gn, String yoa) {
+    public void addStudent(Integer studentCode, String fullName, Integer groupNumber, String yearOfAdmission) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
-        Students student = new Students(sc, fn, gn, yoa);
+        Students student = new Students(studentCode, fullName, groupNumber, yearOfAdmission);
         session.save(student);
         transaction.commit();
         session.close();
@@ -47,7 +40,6 @@ public class StudentRunner {
                 }
             }
         }
-
         transaction.commit();
         session.close();
         return students_by_names;
@@ -59,7 +51,7 @@ public class StudentRunner {
         List<Students> from_students = session.createQuery("FROM Students").list();
         for (int i = 0; i < ids.size(); i++) {
             for (int j = 0; j < from_students.size(); j++) {
-                if (ids.get(i).equals(from_students.get(j).getStudent_code())) {
+                if (ids.get(i).equals(from_students.get(j).getStudentCode())) {
                     students_by_id.add(from_students.get(j));
                 }
             }

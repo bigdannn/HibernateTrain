@@ -6,7 +6,7 @@ public class Polygon {
 
     public static void main(String[] args) {
 
-        StudentRunner sr = new StudentRunner();
+        StudentsUtil sr = new StudentsUtil();
         ArrayList<Integer> numbers = new ArrayList<>();
         ArrayList<String> names = new ArrayList<>();
         names.add("Bog");
