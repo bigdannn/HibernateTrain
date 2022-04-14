@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Entity
 @Data
 @Table(name = "Students")
-public class Student implements Serializable {
+public class Students implements Serializable {
 
     @Id
     @GeneratedValue ( strategy = GenerationType.AUTO )
@@ -25,10 +25,10 @@ public class Student implements Serializable {
     @Column ( name = "year_of_admission", nullable = false)
     private String year_of_admission;
 
-    public Student (){
+    public Students(){
     }
 
-    public Student(Integer sc, String fn, Integer gn, String yoa){
+    public Students(Integer sc, String fn, Integer gn, String yoa){
         this.student_code = sc;
         this.full_name = fn;
         this.group_number = gn;
